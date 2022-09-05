@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>네이버 요약 뉴스</title>
+        <!-- 스타일시트 인터널방식 -->
+        <style>
+            /*
+            스타일 시트를 사용하는 영역
+            CSS 문법만 쓸 수 O
+            기본 사용법 : 
+            
+            선택자{
+                속성명:값;
+            }
+
+            - 선택자 : 태그명, 아이디명, 클래스명 등
+            - 속성명 : 각 요소를 구성하는 상세 속성
+            - 값 : 각 속성에서 사용할 수 있는 값들
+
+            속성명 다음에 콜론(:)
+            값 다음에 세미콜론(;)
+
+            [CSS 선택자(Selector)]
+            1. 타입 선택자 : 요소명 ex)h1/a/p/div
+            2. 자손 선택자 : 띄어쓰기 ex)h1 a
+            3. 아이디 선택자 : # ex)#my
+            4. 클래스 선택자 : . ex).you
+            5. 직계 자식 선택자 : > ex)div>a
+            6. 그룹 선택자 : , ex)p, div
+            7. 종속 선택자 : 태그명+아이디/클래스명 ex)div#top / a.my
+            8. 형제 선택자 : + ex)a+a
+            9. 다중 형제 선택자 : ~ (틸드) ex)li:nth-child(2)~li
+                                            -> 해석 : 선택된 형제 요소 뒤의 모든 형제 요소들
+            10. 속성 선택자 : [] ex)a[href=#]
+                -> 특정 속성을 가진 요소를 선택
+
+            [CSS 요소 박스 모델 필수 속성]
+            1. width : 가로
+                -> 기본값 auto
+                블록박스는 끝까지 차지
+                인라인 박스는 내용만큼 늘어남
+            2. height :세로
+                -> 기본값 auto
+                내용만큼 늘어남
+            3. padding : 안쪽 여백
+            4. border : 경계선
+            5. margin : 바깥 여백
+
+            */
+            header{
+                height: 150px;
+            }
+
+            /* 메인 영역 이미지 */
+            main img{
+                width: 100%;
+            }
+            /* 박스 공통 */
+
+            .part{
+                width: 750px;
+                border: 7px dotted rgb(183, 117, 238);
+                /* 보더 : 두께 종류 색상 (두종색) */
+                padding: 20px;
+                margin: 50px auto;
+
+                /*
+                마진 : 위 아래 양쪽
+                양쪽을 auto로 주면 블록 박스가 중앙에 위치
+                margin : 0 auto로 주는 경우 
+                 */
+
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 1. 상단 -->
+        <header class="part top">
+            <!-- title -->
+            <h1>네이버 요약 뉴스</h1>
+            <!-- GNB(Global Navigation Bar) menu -->
+            <div id="gnb">
+                <a href="#"><img src="images/naverlogo.png" alt="네이버 로고" style="width : 20px"></a>
+                <a href="#">정치</a>
+                <a href="#">경제</a>
+                <a href="#">사회</a>
+                <a href="#">IT/과학</a>
+                <a href="#">TV/연예</a>
+            </div>
+        </header>
+        <!-- 2. 메인 -->
+        <main class="part main">
+            <!-- image -->
+            <img src="images/mainillust.png" alt="메인 뉴스 일러스트 이미지">
+        </main>
+        <!-- 3. 하단 -->
+        <footer class="part bottom">
+            <address>
+                서울특별시 강남구 역삼동 119 대호B 8F <br>
+                대표 : Suhyeon Lee <br>
+                전화 : 010-2222-3333
+            </address>
+        </footer>
+
+        <!-- [div element : divide / division] 
+            -> 영역을 구분하는 element
+            -> 특징 : 블록요소 옆에 다른 요소가 위치하지 X, 내용을 구분하는 역할
+
+            [div 형제 element]
+            -> div에 어떤 내용 영역인 지 알 수 있도록 의미를 부여한 새로운 레이아웃용 태그
+            -> 태그에 의미를 부여
+            -> sementic tag
+
+            1. header : 상단(각 파트별 상단 표시 가능)
+            2. footer : 하단(각 파트별 하단 표시 가능)
+            3. main : 메인(한 페이지에 한 번만 사용)
+            4. nav : 네비게이션
+            5. aside : 부수적인 내용
+            6. section : 내용 구분
+            7. article : 독립적인 내용 구분
+                (보통 article이나 section은 w3c에서 heading 태그(h1~h6)를 내용에 사용할 것을 권고)
+
+            [img element : image]
+            - 이미지
+            - 필수 속성:
+                1) src(source) - 이미지 경로
+                2) alt(alternative text) - 이미지 설명
+                    대체 텍스트 -> 웹 접근성 필수
+
+            [경로]
+            1. 상대 경로
+                -> 현재 파일 위치 기준
+                ./ 현재위치
+                (또는 아무 것도 안 쓰고 시작)
+
+            2. 절대 경로
+                -> http:// 또는 https://
+
+            3. 절대 상대 경로
+                -> 프로젝트 파일 최상위부터 설정하는 경로
+                    / 루트부터 출발
+                    ex) /aaa/bbb
+                -> 서버에 올렸을 때 개발환경과 루트가 달라질 수 있으므로 절대 상대 경로는 주의
+
+            [웹 접근성이란?]
+            -> 평등의 원칙 - 누구나 웹 정보에 접근하는 것에 불평등이 있어서는 X
+                            이미지 설명(alt) 필수 - 스크린 리더기
+            -> 웹 접근성 연구소 참조
+            https://www.wah.or.kr:444/
+
+            [웹 표준이란?]
+            -> 모든 브라우저에서 공통으로 작성되는 코딩 규칙 및 표준
+                (크로스 브라우징 : 같은 디자인과 기능이 여러 종류의 브라우저에서 동일하게 작동되는 것)
+
+            [CSS]
+            - style = "CSS속성 설정"
+            - 속성 설정
+                속성명:값;
+            -> in-line CSS
+        -->
+        
+
+</html>
