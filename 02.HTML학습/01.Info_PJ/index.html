@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>네이버 요약 뉴스</title>
-        <!-- 스타일시트 인터널방식 -->
-        <style>
-            /*
+
+<head>
+    <meta charset="utf-8">
+    <title>네이버 요약 뉴스</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Nanum+Gothic&display=swap"
+        rel="stylesheet">
+    <!-- 스타일시트 인터널방식 -->
+    <style>
+        /*
             스타일 시트를 사용하는 영역
             CSS 문법만 쓸 수 O
             기본 사용법 : 
@@ -46,65 +49,212 @@
                 내용만큼 늘어남
             3. padding : 안쪽 여백
             4. border : 경계선
+            -> 종류 : solid, dashed, dotted, ridge, double
             5. margin : 바깥 여백
+            
+            [여백 방향별 설정 : padding / margin]
+            padding-top, padding-bottom, padding-left, padding-right
+            margin-top, margin-bottom, margin-left, margin-right
+
+            padding: 상하좌우 / 상하 좌우 / 상 좌우 하 / 상 하 좌 우
+            margin: 상하좌우 / 상하 좌우 / 상 좌우 하 / 상 하 좌 우
+
+            [ 글자 관련 속성 ]
+            1. 글자크기 -> font-size
+            값 -> 절대단위: px, pt (12pt==16px)
+                  상대단위: em, rem, %, vw, vh...
+        
+            2. 글자두께 -> font-weight
+            값 -> lighter(얇게), bold(두껍게)
+                bolder(더 두껍게), 100~900(9단계)
+                - 보통 글자체에 따라 지원여부가 달라짐
+        
+            3. 글자체 ->  font-family
+            값 -> 기본적으로 PC에 설치된 서체를 적용함
+                순서대로 콤마로 구분하여 대체체를 설정함
+            예) font-family: 궁서체, 굴림체, Verdana
+            -> 최근에는 웹폰트가 대세!!!
+            브라우저에서 다운로드로 지원하는 글자체!
+        
+            4. 글자색 -> color
+            값 -> 색상명, 해시코드, rgb, hsl 등
+        
+            5. 글자자간 -> letter-spacing
+            값 -> 숫자에 일반단위사용
+        
+            6. 글자줄간격 -> line-height
+            값 -> 숫자에 일반단위사용
+                  숫자만쓰면 글자크기의 배수
+        
+            7. 글자단어간격 -> word-spacing
+            값 -> 숫자에 일반단위사용
+
+            8. 글자스타일 -> font-style
+            값 -> 이탤릭체 : italic
+                  이탤릭체 해제시 : normal
+        
+            9. 글자데코레이션 -> text-decoration
+            값 -> 글자에 줄긋기 값
+            underline 밑줄
+            overline 윗줄
+            linethrough 중간줄
+            none 줄없앰
+            10. 글자들여쓰기 -> text-indent
+            값 -> 숫자에 일반단위사용
+            (내어쓰기는 마이너스 숫자)
+            참고) 
+            https://www.w3schools.com/css/css_font.asp
+
+            [ 웹 색상표기법 ]
+            1. 해시코드 : #6자리숫자
+                (두자리가 같을 경우 3자리로 축약표현가능)
+                - 16진수로 표기함(0~f)
+                - 해시코드로 투명도를 주려면 뒤에 2자리 추가하여
+                    8자리 숫자로 투명도를 표현함
+            2. RGB 코드 : rgba(red,green,blue,알파값)
+        - 0~255 까지 숫자중 사용
+        - red, green, blue
+        - 마지막 a는 alpha값 즉, 투명도 -> 없으면 생략!
+        (0~1사이의 소숫점값들 사용)
+
+        [ rgba 2가지 표기법 ]
+            1. rgba(red색,green색,blue색,alpha값)
+                - alpha값은 투명도 (0~1)
+            2. rgb(red색 green색 blue색 / alpha값%)
+                - alpha값은 투명도 (0%~100%)
+            3. HSL 코드 : hsla(hue,saturation,lightness,알파값)
+                - hue(색상), saturation(채도), lightness(명도)
+                - hue는 색상번호, 채도와 명도는 0~100%값 범위로 사용
+                - 마지막은 alpha값 -> 역시 없으면 생략!
+            4. 웹색상명: 지정된 컬러명으로 색생을 셋팅
+                예) red, green, blue, pink, navy, 등
+                - 모든 색상은 w3schools.com의 색상참조로 가서확인!
+                https://www.w3schools.com/cssref/css_colors.asp
+
+            [ CSS 적용 우선순위 ]
+            inline > id > class > type
+            - 인라인이 가장 쌤!
+            - 약한 경우에 순위를 가장 높이는 방법! -> !important
+            -> 이 방법은 인라인보다도 쌔기 때문에 함부로 쓰면 안됨!
 
             */
-            header{
-                height: 150px;
-            }
 
-            /* 메인 영역 이미지 */
-            main img{
-                width: 100%;
-            }
-            /* 박스 공통 */
+        /* 박스 공통 */
+        .part {
+            width: 750px;
+            border: 10px dotted rgb(49, 211, 162);
+            /* 보더 : 두께 종류 색상 (두종색) */
+            padding: 10px;
+            margin: 20px auto;
 
-            .part{
-                width: 750px;
-                border: 7px dotted rgb(183, 117, 238);
-                /* 보더 : 두께 종류 색상 (두종색) */
-                padding: 20px;
-                margin: 50px auto;
+            box-sizing: border-box;
 
-                /*
+            border-radius: 10px;
+
+            /*
                 마진 : 위 아래 양쪽
                 양쪽을 auto로 주면 블록 박스가 중앙에 위치
                 margin : 0 auto로 주는 경우 
                  */
+        }
 
-            }
-        </style>
-    </head>
-    <body>
-        <!-- 1. 상단 -->
-        <header class="part top">
-            <!-- title -->
-            <h1>네이버 요약 뉴스</h1>
-            <!-- GNB(Global Navigation Bar) menu -->
-            <div id="gnb">
-                <a href="#"><img src="images/naverlogo.png" alt="네이버 로고" style="width : 20px"></a>
-                <a href="#">정치</a>
-                <a href="#">경제</a>
-                <a href="#">사회</a>
-                <a href="#">IT/과학</a>
-                <a href="#">TV/연예</a>
-            </div>
-        </header>
-        <!-- 2. 메인 -->
-        <main class="part main">
-            <!-- image -->
-            <img src="images/mainillust.png" alt="메인 뉴스 일러스트 이미지">
-        </main>
-        <!-- 3. 하단 -->
-        <footer class="part bottom">
-            <address>
-                서울특별시 강남구 역삼동 119 대호B 8F <br>
-                대표 : Suhyeon Lee <br>
-                전화 : 010-2222-3333
-            </address>
-        </footer>
+        /* 상단 영역 */
+        header {
+            height: 150px;
+            text-align: center;
 
-        <!-- [div element : divide / division] 
+        }
+
+        header h1 {
+            font-size: 50px;
+            font-weight: normal;
+            font-family: 'Black And White Picture', sans-serif;
+            color: limegreen;
+            letter-spacing: 2px;
+            line-height: 70px;
+            word-spacing: 10px;
+
+            margin: 0;
+        }
+
+        #gnb>a {
+            color: navy;
+            text-decoration: none;
+            font: bold 20px/40px "Nanum Gothic";
+            margin: 0 5px;
+        }
+
+        #gnb>a+a:hover {
+            color: hotpink;
+            text-decoration: overline;
+        }
+
+        #gnb img {
+            width: 30px !important;
+            vertical-align: -9px;
+            margin-right: -9px;
+        }
+
+        /* 메인 영역 이미지 */
+        main img {
+            width: 100%;
+        }
+
+        /* 하단 영역 */
+        footer.bottom {
+            text-align: center;
+            background-color: #eeeeee;
+        }
+
+        .bottom address {
+            font-style: normal;
+            font-family: 'Nanum Gothic';
+            font-size: 14px;
+            line-height: 2;
+            color: #222;
+        }
+
+        .bottom address span {
+            font-family: 'Black And White Picture', sans-serif;
+            color: blue;
+            font-size: 20px;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 상단 -->
+    <header class="part top">
+        <!-- title -->
+        <h1>네이버 요약 뉴스</h1>
+        <!-- GNB(Global Navigation Bar) menu -->
+        <div id="gnb">
+            <a href="index.html" title="메인 페이지로 이동하기"><img src="images/naverlogo.png" alt="네이버로고"
+                    style="width: 20px;"></a>
+            <a href="sub1.html">정치</a> |
+            <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> |
+            <a href="sub4.html">IT/과학</a> |
+            <a href="sub5.html">TV/연예</a>
+        </div>
+    </header>
+    <!-- 2. 메인 -->
+    <main class="part main">
+        <!-- image -->
+        <img src="images/mainillust.png" alt="메인 뉴스 일러스트 이미지">
+    </main>
+    <!-- 3. 하단 -->
+    <footer class="part bottom">
+        <address>
+            서울특별시 강남구 역삼동 119 대호B 8F <br>
+            대표 : Suhyeon Lee <br>
+            전화 : 010-2222-3333
+        </address>
+    </footer>
+
+    <!-- [div element : divide / division] 
             -> 영역을 구분하는 element
             -> 특징 : 블록요소 옆에 다른 요소가 위치하지 X, 내용을 구분하는 역할
 
@@ -159,7 +309,12 @@
             - 속성 설정
                 속성명:값;
             -> in-line CSS
+
+            [title 속성 ]
+            - 툴팁을 나오게 하는 속성임
+            - 값으로 메시지를 넣으면 마우스 오버시
+              툴팁으로 메시지가 보인다
+            - 어떤 요소에도 필요하면 사용가능함
         -->
-        
 
 </html>
