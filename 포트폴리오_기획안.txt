@@ -1,0 +1,23 @@
+주제 : 한국을 홍보하는 사이트
+- 국내 여행을 하며 직접 찍은 사진들을 메인 이미지로 활용
+- 투어, 호텔, 관련 관광지 홍보를 연계하여 수익 창출 가능
+
+
+
+참고 사이트)
+1. Travel World Escape https://www.travelworldescape.com/
+2. travelway https://travelwayeurope.com/
+3. vacao travel https://vacao.agency/
+
+
+
+
+제출 이메일)
+tombap@naver.com
+
+진행 방법)
+1. 주제 선정 + 자료 수집
+2. 분석 설계 -> 와이어프레임
+3. 구현 코딩
+4. 테스트 및 수정
+5. 서버 배포
