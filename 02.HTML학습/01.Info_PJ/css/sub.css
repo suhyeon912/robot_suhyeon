@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* Info PJ sub page CSS - sub.css */
+
+/* 공통 클래스 불러오기 */
+/* 
+    import로 파일 합치기
+
+    외부 CSS파일에서 다른 외부 CSS파일을 import방식으로 불러올 때 장점?
+    - html파일에서 link 요소로 호출할 경우 http request(웹 요청)이 많아져서 페이징 렌더링 속도 지연
+    -> 한 번에 여러 파일을 불러올 수 O
+*/
+
+/* @import url(); */
+@import url(common.css);
+
+/* 2-1. 언론사로고 */
+.prlogo img{
+    /* 높이 */
+    height: 32px;
+}
+
+/* 2-2. 기사제목 */
+.atit{
+    font-size: 30px;
+    font-weight: normal;
+    font-family: '굴림', '궁서', sans-serif;
+    letter-spacing: -2px;
+    word-spacing: -1px;
+    /* white-space: nowrap; */
+}
+
+/* 2-3. 기사사진(+사진설명) */
+.afig{
+    margin: 15px 0;
+    text-align: center;
+}
+
+.afig img{
+    max-width: 100%;
+    /* width: 100%; */
+}
+
+/* 2-4. 기사내용 */
+
+
+/* 2-5. 기자정보 */
+
+
+/* 2-6. 기사원문 */
+
