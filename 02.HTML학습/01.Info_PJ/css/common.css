@@ -1,4 +1,16 @@
 @charset "utf-8";
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Info PJ 공통 CSS - common.css */
 
 /* 박스공통 */
@@ -22,13 +34,13 @@ header {
 
 /* 타이틀 */
 header h1 {
-    font-size: 50px;
-    font-weight: normal;
-    font-family: 'Black And White Picture', sans-serif;
+    font-size: 40px;
+    font-weight: lighter;
+    font-family: 'GmarketSansMedium', sans-serif;
     color: rgb(4, 93, 4);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     line-height: 70px;
-    word-spacing: 10px;
+    word-spacing: 3px;
     margin: 0;
 }
 
@@ -37,7 +49,7 @@ header h1 {
     color: navy;
     text-decoration: none;
 
-    font: bold 20px/40px 'Nanum Gothic';
+    font: bold 20px/40px 'GmarketSansMedium';
 
     margin: 0 5px;
 }
@@ -58,25 +70,25 @@ header h1 {
 }
 
 /* 하단영역 */
-footer.info {
+footer.bottom {
     text-align: center;
     background-color: #eeeeee;
 }
 
 /* 주소요소 */
-.info address {
+.bottom address {
     font-style: normal;
-    font-family: 'Nanum Gothic';
+    font-family: 'GmarketSansMedium';
     font-size: 14px;
     line-height: 2;
     color: #222;
 }
 
 /* 이름만 구분한 span요소 */
-.info address span {
-    font-family: 'Black And White Picture', sans-serif;
-    color: blue;
+.bottom address span {
+    font-family: 'GmarketSansMedium', sans-serif;
+    color: rgb(88, 88, 88);
     font-size: 20px;
-    text-decoration: underline;
-    text-decoration-style: dotted;
+    /* text-decoration: underline; */
+    /* text-decoration-style: dotted; */
 }

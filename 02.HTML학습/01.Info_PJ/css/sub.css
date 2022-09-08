@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /* Info PJ sub page CSS - sub.css */
 
 /* 공통 클래스 불러오기 */
@@ -13,38 +14,121 @@
 /* @import url(); */
 @import url(common.css);
 
+article,
+.arti,
+.rinfo,
+.org {
+    font-family: 'GmarketSansMedium', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* 2-1. 언론사로고 */
-.prlogo img{
+.prlogo img {
     /* 높이 */
     height: 32px;
 }
 
 /* 2-2. 기사제목 */
-.atit{
+.atit {
     font-size: 30px;
     font-weight: normal;
-    font-family: '굴림', '궁서', sans-serif;
+    font-family: 'GmarketSansMedium', sans-serif;
     letter-spacing: -2px;
     word-spacing: -1px;
     /* white-space: nowrap; */
 }
 
 /* 2-3. 기사사진(+사진설명) */
-.afig{
+.afig {
     margin: 15px 0;
     text-align: center;
 }
 
-.afig img{
+.afig img {
     max-width: 100%;
     /* width: 100%; */
 }
 
-/* 2-4. 기사내용 */
+/* small */
+.afig small {
+    font-family: 'GmarketSansMedium', sans-serif;
+    color: #555;
+}
 
+/* 2-4. 기사내용 */
+.arti p{
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+mark {
+    display: block;
+    background-color: #eaeaea;
+    text-align: center;
+    line-height: 3;
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #ccc;
+}
+.arti i{
+    font-style: normal;
+    font-weight: bold;
+}
+
+.arti q{
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.arti bdo{
+    text-decoration: line-through;
+}
 
 /* 2-5. 기자정보 */
-
+.rinfo{
+    padding: 10px;
+    font-size: 14px;
+}
 
 /* 2-6. 기사원문 */
+.org a{
+    padding: 10px;
+    font-size: 20px;
+    color: lightcoral;
+    border: 2px dashed lightgreen;
+}
 
+.main article{
+    border-top: 2px dashed #ccc;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+.main h3{
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-weight: normal;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.bquote blockquote{
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+
+    font: 17px/1.5 'GmarketSansMedium';
+    text-align: justify;
+    text-indent: 10px;
+}
+
+.bquote img{
+    float: left;
+    border-radius: 5px;
+    margin-right: 22px;
+}
