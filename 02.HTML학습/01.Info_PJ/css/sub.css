@@ -131,6 +131,8 @@ mark {
     float: left;
     border-radius: 5px;
     margin-right: 22px;
+    width: 220px;
+    height: 220px;
 }
 
 .main .desc{
@@ -142,4 +144,94 @@ mark {
 .desc small{
     display: block;
     padding: 0 20px;
+}
+
+.work{
+    text-align: center;
+    background-color: #d7ffd6;
+}
+.work cite{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkorange;
+}
+
+.main a{
+    color: #222;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 2.5;
+    letter-spacing: -1px;
+}
+.main a:hover{
+    color: coral;
+    text-shadow: 1px 1px 1px rgb(75, 75, 75);
+}
+.main ul{
+    list-style-type: square;
+}
+
+.main ol{
+    list-style-type: upper-roman;
+}
+
+.main ul li:first-child a{
+    color: red;
+}
+.main ul li:nth-child(2) a{
+    color: green;
+}
+.main ul li:last-child a{
+    color: blue;
+}
+
+.secnews dt{
+    margin-top: 20px;
+    padding: 3px;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px rgb(90, 90, 90);
+
+    display: inline-block;
+
+    border: 3px dotted;
+    border-radius: 50%;
+}
+
+.secnews dt:first-of-type{
+    color: lightcoral;
+}
+.secnews dt:nth-of-type(2){
+    color: lightgreen;
+}
+.secnews dt:last-of-type{
+    color: lightskyblue;
+}
+
+.pnews td a{
+    font-size: 15px;
+}
+
+.pnews td:first-child{
+    width: 50px;
+    height: 70px;
+    background-color: #ccc;
+    text-align: center;
+}
+
+.pnews td:nth-child(2){
+    background: #ececec;
+    padding-right: 116px;
+    padding-left: 20px;
+}
+
+.pnews img{
+    width: 151px;
+    height: 103px;
+    vertical-align: middle;
+}
+
+.pnews table{
+    border-collapse: separate;
+    border-spacing: 7px;
 }
