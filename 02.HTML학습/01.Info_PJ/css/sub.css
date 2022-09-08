@@ -208,6 +208,10 @@ mark {
     color: lightskyblue;
 }
 
+.pnews table{
+    margin: 0 auto;
+}
+
 .pnews td a{
     font-size: 15px;
 }
