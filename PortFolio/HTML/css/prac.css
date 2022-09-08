@@ -12,6 +12,12 @@
     font-style: normal;
 }
 
+header{
+    width: auto;
+    height: 100px;
+    background-color: rgb(100, 100, 100);
+}
+
 body, a{
     font-family: 'GmarketSansMedium';
     text-decoration: none;
@@ -19,6 +25,15 @@ body, a{
 
 .top img{
     width: 60px;
+}
+.top button, .top img{
+    width: 20px;
+    height: 20px;
+}
+
+.top button{
+    background-color: transparent;
+    border: transparent;
 }
 
 /* .top div h4, textarea{
