@@ -23,10 +23,28 @@ body, a{
     text-decoration: none;
 }
 
-.top img{
-    width: 60px;
+.search_box{
+    height: 40px;
+    width: 150px;
+    border: 1px solid #1b5ac2;
+    background: #fff;
 }
-.top button, .top img{
+
+.search_box input{
+    font-size: 16px;
+    width: 325px;
+    padding: 10px;
+    border: 0;
+    outline: none;
+    float: left;
+}
+
+.top .logo{
+    width: 100px;
+    padding-left: 20px;
+    padding-top: 16.5px
+}
+.top button, .top .menu_btn{
     width: 20px;
     height: 20px;
 }
@@ -40,10 +58,21 @@ body, a{
     float: right;
 } */
 
-.top h4{
+.top h4, a, .logo{
     display: inline;
-    
 }
+
 .top textarea{
     text-align: left;
+}
+
+.top h4, a{
+    color: white;
+}
+
+.top div{
+    display: inline;
+    float: right;
+    margin: 35px 20px 35px 0;
+    /* vertical-align: middle; */
 }
