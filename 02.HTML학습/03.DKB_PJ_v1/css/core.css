@@ -33,3 +33,16 @@ body{
     margin: 0 auto;
 }
 
+
+
+.scbar::-webkit-scrollbar{
+    width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb{
+    background: #555;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track{
+    background: white;
+}
