@@ -72,7 +72,20 @@ body{
 }
 
 /* 캐릭터 이미지 */
-.cat img{
+.ci > img{
     /* 박스를 채움! */
     width: 100%;
+}
+
+.ci figcaption{
+    text-align: center;
+    margin-top: -20%;
+}
+
+.ci figcaption img{
+    width: 50%;
+}
+
+.ci figcaption img:first-of-type{
+    display: none;
 }
