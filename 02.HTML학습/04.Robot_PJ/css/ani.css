@@ -114,18 +114,28 @@
     transform: scale(2);
 
     /* 애니메이션: 이시이지반방마 */
-    animation: logoAni 2s ease-in-out 1s forwards;
+    animation: 
+    /* 중앙에서 왼쪽위로 이동애니 */
+    logoAni 2s ease-in-out 1s forwards,
+    /* 이동후 반복회전애니 */
+    logoAni2 .5s ease-in-out 3s infinite alternate;
 
 }
 
 /* 로고애니 키프레임 */
 @keyframes logoAni {
     /* 초기설정이 from 이므로 생략! */
-    to{
+    80%{
         /* 원래 위치와 크기로! */
         top: 50px;
         left: 50px;
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
+    }
+    100%{
+        top: 50px;
+        left: 50px;
+        /* 회전위치 맞추기! */
+        transform: scale(1) rotate(20deg);
     }
 } /* 키프레임 */
 
@@ -137,7 +147,7 @@
     100%{
         transform: rotate(-20deg);
     }
-}
+} /* 키프레임 */
 
 
 
@@ -149,15 +159,17 @@
     부모박스의 높이값이 auto 즉, 지정하지
     않아서 적용안됨. 특정크기를 주면 적용됨! */
 
-    animation: headAni 2s ease-out 3s forwards;
+    /* 애니메이션: 이시이지반방마 */
+    animation: headAni 1s ease-out 2.5s forwards;
 }
 
+/* 로봇머리 등장 키프레임 */
 @keyframes headAni {
     to{
+        /* 원래위치로! */
         top: 0;
     }
-    
-}
+} /* 키프레임 */
 
 /* 3. 로봇몸 */
 .body{
@@ -165,26 +177,94 @@
     /* 가로크기는 끝까지 채우는 크기이므로
     %단위가 바로 적용된다! */
 
-    animation: bodyAni 2s ease-out 3s forwards;
+    /* 애니메이션: 이시이지반방마 */
+    animation: bodyAni 1s ease-out 2s forwards;
 }
 
+/* 로봇몸 등장 키프레임 */
 @keyframes bodyAni {
     to{
+        /* 원래위치로! */
         left: 0;
     }
-    
-}
-
-
+} /* 키프레임 */
 
 /* 4. 설명링크 */
 .link{
     /* 투명상태 */
     opacity: 0;
+    /* 애니메이션: 이시이지반방마 */
+    animation: opaAni 1s linear 4.5s forwards;
 }
 
 /* 5. 위로가기 버튼 */
 .btnTop{
     /* 투명상태 */
     opacity: 0;
+    /* 애니메이션: 이시이지반방마 */
+    animation: opaAni 1s linear 5s forwards;
 }
+
+/* 6. TV */
+.tv{
+    /* 투명상태 */
+    opacity: 0;
+    /* 애니메이션: 이시이지반방마 */
+    animation: opaAni 1s linear 4s forwards;
+}
+
+/* 설명링크, 위로이동버튼, TV 등장 공통 키프레임 */
+@keyframes opaAni {
+    /* 보였다 안보였다! */
+    20%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+} /* 키프레임 */
+
+/* 7. 오른팔 */
+.a2 {
+    /* 회전축변경(세로 상단) */
+    transform-origin: center 20px;
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    a2Ani .4s ease-in-out 6s forwards,
+    a2Ani2 .2s linear 6.4s infinite alternate;
+}
+/* 오른팔 올리기 애니 */
+@keyframes a2Ani {
+    to{
+        transform: rotate(-150deg);
+    }
+}/* 키프레임 */
+
+/* 팔흔들기 애니 */
+@keyframes a2Ani2 {
+    to{
+        transform: rotate(-140deg);
+    }
+} /* 키프레임 */
+
+/* 8. 입 */
+.mouth{
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    mouthAni .05s linear 6s infinite alternate;
+}
+/* 입 애니 키프레임 */
+@keyframes mouthAni {
+    to{
+        transform: scaleY(.5);
+    }
+} /* 키프레임 */
