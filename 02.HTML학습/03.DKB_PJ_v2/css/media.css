@@ -65,6 +65,7 @@
         display: none;
     }
 
+    /* 보여질요소 */
     .ham{
         display: block;
     }
