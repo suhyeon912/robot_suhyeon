@@ -59,7 +59,7 @@ body *{
     width: 702px;
     height: 397px;
     /* 부모는? .cont */
-    background-color: red;
+    background-color: #000;
 }
 /* 유튜브 아이프레임 */
 #screen iframe{
@@ -67,6 +67,77 @@ body *{
     height: 100%;
     border: none;
     /* 기본프레임보더 없앰 */
+}
+
+/* 2-2.예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 57px;
+    width: 100%;
+    /* 앱솔루트 판타롱스타킹 이므로
+    가로크기를 부모박스에 맞춘다!
+    왜? flex 정렬을 쓰려고! */
+}
+/* 선택메뉴 ul */
+.mlist ul{
+    /* 플렉스 박스 */
+    display: flex;
+    /* 수평방향 정렬 */
+    justify-content: center;
+}
+/* 상위 li */
+.mlist ul>li{
+    /* 렐러티브 포지션 
+    - 부모자격(.movtxt) */
+    position: relative;
+    /* 부모자격이 있는 요소가
+    앱솔루트 숨길 수 있다! */
+    overflow: hidden;
+}
+/* 상위 li 2번째 부터 끝까지 선택 */
+.mlist>ul>li+li{
+    margin-left: 10px;
+}
+
+/* 포스터 이미지 */
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
+
+/* 영화정보박스 */
+.movtxt{
+    /* 플렉스박스 */
+    display: flex;
+    /* 플렉스 수직방향진행 */
+    flex-direction: column;
+    /* 진행방향의 수평 중앙정렬 */
+    justify-content: center;
+
+
+    /* 앱솔루트 포지션 */
+    position: absolute;
+    /* 처음에 높이값 만큼 아래에 있음 */
+    top: 100%;
+    /* 부모는? 상위li */
+    width: 100%;
+    height: 100%;
+
+    /* 반투명배경 */
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 2;
+}
+/* 영화제목만 변경 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: 1.7rem;
+    letter-spacing: -1px;
 }
 
 /****************** 3. 하단영역 ******************/
