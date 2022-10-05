@@ -106,15 +106,16 @@
                 // 익명함수를 할당하여 이벤트 발생시 코드실행!
 
                 // 방법1: onclick 속성에 익명함수 할당방식
+                // btns[순번] 또는 btns.item(순번)
                 btns[i].onclick = function () {
-                    chgImg(this)
+                    chgImg(this);
                 };
 
                 // 방법2: 이벤트 등록 내장함수 사용방식
                 // btns[i].addEventListener("click", function () {
                 //     chgImg(this);
                 // });
-                
+
                 // 함수호출시 이벤트가 걸린 나 자신->this 를 보냄!
 
             } /////////// for ///////////////
@@ -171,6 +172,7 @@
             // 속성변경하기 JS내장함수 : setAttribute(속성값,값)
             document.querySelector("#scene")
                 .setAttribute("src", isrc);
+                // .src = isrc;
 
         } ///////////// chgImg 함수 /////////////
         /////////////////////////////////////////
@@ -203,4 +205,4 @@
 
 </body>
 
-</html>
+</html>                            
