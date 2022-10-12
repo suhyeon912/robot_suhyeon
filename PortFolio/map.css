@@ -16,12 +16,10 @@ body div.vmap{
 }
 
 body input.imgbtn{
-    background: url(자료/logo_ff.png) no-repeat black;
     border: none;
-    width: 50px;
-    height: 30px;
+    
     cursor: pointer;
-
+    width: 15%;
     z-index: 5;
 }
 
