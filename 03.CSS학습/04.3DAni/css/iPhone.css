@@ -14,8 +14,7 @@ html,body{
     /* 보이는 화면 채우기 */
 }
 body{
-    background-image: 
-    linear-gradient(to bottom, #fff 20%,skyblue 40%,#fff);
+    background-image: linear-gradient(to bottom, #fff, #C8C8FF, #B7A4EE);
     /* 넘치는 자식요소 숨기기 */
     overflow: hidden;
 }
