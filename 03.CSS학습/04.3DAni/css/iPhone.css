@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* 회전하는 아이폰 + 흐르는 글자 CSS - iPhone.css */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #fff, #C8C8FF, #B7A4EE);
+    overflow: hidden;
+}
+
+.iphone {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 400px;
+    outline: 2px solid palevioletred;
+
+    transform-style: preserve-3d;
+    transform: rotateX(10deg) rotateY(30deg);
+}
+
+.iphone span {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    outline: 1px dashed slateblue;
+}
+
+.iphone span:nth-child(1){
+    background-image: url(../images/ip01.png);
+
+    transform: translateZ(10px);
+}
+
+.iphone span:nth-child(2){
+    background-image: url(../images/ip03.png);
+    width: 20px;
+    right: -10px;
+
+    transform: rotateY(90deg);
+}
+
+.iphone span:nth-child(3){
+    background-image: url(../images/ip04.png);
+    width: 20px;
+    left: -10px;
+
+    transform: rotateY(-90deg);
+}
+
+.iphone span:nth-child(4){
+    background-image: url(../images/ip05.png);
+    height: 20px;
+    bottom: -10px;
+
+    transform: rotateX(90deg);
+}
+
+.iphone span:nth-child(5){
+    background-image: url(../images/ip06.png);
+    height: 20px;
+    top: -10px;
+
+    transform: rotateX(-90deg);
+}
+
+.iphone span:nth-child(6){
+    background-image: url(../images/ip02.png);
+
+    transform: translateZ(-10px) rotateY(180deg);
+}
