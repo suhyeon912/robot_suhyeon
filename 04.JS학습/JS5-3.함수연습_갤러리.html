@@ -278,16 +278,27 @@
                     // 분기문 ////////
                     if (isB) { // true이면 "자동넘김"
                         // 인터발 주기: 1초간격 goSlide(1)호출!
-                        setInterval(() => goSlide(1), 1000);
-                        // 자기자신 버튼 없애기
-                        x.style.display = "none";
-                        // "멈춤"버튼 보이기
-                        abtn[1].style.display = "inline-block";
+                        // 멈추기위해 변수에 인터발할당!
+                        autoI = setInterval(
+                            () => goSlide(1), 1000);
 
-                    }
-                    else{
-                        
                     } //////// if ///////////
+                    else{ // "멈춤"버튼
+                        // 인터발지우기
+                        clearInterval(autoI);
+                    } //////// else //////////
+                    
+                    // 자기자신버튼 없애기
+                    x.style.display = "none";
+                    // "멈춤"/"자동넘김"버튼보이기
+                    abtn[isB?1:0].style.display = "inline-block";
+                    // isB?1:0 의 해석
+                    // 삼항연산자 -> 비?집:놀이동산
+                    // isB가 true이면 즉, "자동넘김"이면
+                    // 1 즉 두번째 버튼출력
+                    // 아니면 0 즉, 첫번째 버튼출력
+
+                    // console.log("autoI변수:",autoI);
 
                 }; //////// click /////////
 
@@ -298,6 +309,29 @@
             // 원리: 미리셋팅된 클래스를 미니언즈요소에
             // 일정시간 후 넣고/빼고/넣기를 해준다!
             // 변경대상: #mini
+            const mini = document.querySelector("#mini");
+
+            // 2초후에 미니언즈 class "on1"넣기
+            setTimeout(() => {
+                mini.classList.add("on1");
+                // mini.classList.add("on1","바보야","멍멍아");
+            }, 2000);
+
+            // 4초후에 미니언즈 class "on1"빼기
+            setTimeout(() => {
+                mini.classList.remove("on1");
+                // mini.classList.remove("on1","멍멍아");
+            }, 4000);
+
+            // 6초후에 미니언즈 class "on2"넣기
+            setTimeout(() => {
+                mini.classList.toggle("on2");
+            }, 6000);
+
+            // 8초후에 미니언즈 class "on1"넣기 / "on2"빼기
+            setTimeout(() => {
+                mini.classList.replace("on2","on1");
+            }, 8000);
 
 
         }); /////////// 로드구역 ///////////////////
