@@ -14,7 +14,8 @@ html,body{
     /* 보이는 화면 채우기 */
 }
 body{
-    background-image: linear-gradient(to bottom, #fff, #C8C8FF, #B7A4EE);
+    background-image: 
+    linear-gradient(to bottom, #fff 20%,skyblue 40%,#fff);
     /* 넘치는 자식요소 숨기기 */
     overflow: hidden;
 }
@@ -191,3 +192,23 @@ body{
         /* 왼쪽방향 화면크기만큼 이동 */
     }
 } /* 키프레임 */
+
+
+
+/* 이벤트 처리박스 */
+.evt{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    /* 애니후 width: 100vw변경!(JS에서) */
+    height: 100vh;
+    /* 플렉스박스 */
+    display: flex;
+}
+/* 등분할 박스 */
+.evt div{
+    flex: 1;
+    /* outline: 2px dashed blue;
+    background-color: rgba(255, 0, 0, 0.509); */
+}
