@@ -82,6 +82,7 @@ root3.render(myele3);
 
 ***********************************************************/
 const myele4 = (
+<<<<<<< HEAD
   <React.Fragment>
     <h2>[ 다수의 HTML요소 블록 삽입 ]</h2>
     <ul>
@@ -90,6 +91,16 @@ const myele4 = (
       <li>백앤드개발</li>
     </ul>
   </React.Fragment>
+=======
+    <React.Fragment>
+        <h2>[ 다수의 HTML요소 블록 삽입 ]</h2>
+        <ul>
+            <li>프론트앤드개발</li>
+            <li>리액드사용개발</li>
+            <li>백앤드개발</li>
+        </ul>
+    </React.Fragment>
+>>>>>>> 62f7b10c49b8d3ead9a8ec070ed6c547e2634d79
 );
 const root4 = ReactDOM.createRoot(document.querySelectorAll("#root div")[3]);
 root4.render(myele4);
@@ -97,6 +108,7 @@ root4.render(myele4);
 //// 5번에는 내가 원하는 태그요소를 출력해 본다!
 
 const myele5 = (
+<<<<<<< HEAD
   <React.Fragment>
     <h2>나의 리액트 JSX출력!</h2>
     <ul>
@@ -106,6 +118,17 @@ const myele5 = (
       <li>리액트 메뉴4</li>
     </ul>
   </React.Fragment>
+=======
+    <React.Fragment>
+        <h2>나의 리액트 JSX출력!</h2>
+        <ul>
+            <li>리액트 메뉴1</li>
+            <li>리액트 메뉴2</li>
+            <li>리액트 메뉴3</li>
+            <li>리액트 메뉴4</li>
+        </ul>
+    </React.Fragment>
+>>>>>>> 62f7b10c49b8d3ead9a8ec070ed6c547e2634d79
 );
 const root5 = ReactDOM.createRoot(document.querySelectorAll("#root div")[4]);
 root5.render(myele5);
@@ -141,7 +164,11 @@ root7.render(myele7);
 const x = 1000;
 let txt = "이 돈으로는 충분히 살 수 있어!";
 if (x < 10000) {
+<<<<<<< HEAD
   txt = "돈이 부족해서 살 수 없어!";
+=======
+    txt = "돈이 부족해서 살 수 없어!";
+>>>>>>> 62f7b10c49b8d3ead9a8ec070ed6c547e2634d79
 } /////// if ///////
 
 const myele8 = <h1>{txt}</h1>;
@@ -152,6 +179,7 @@ root8.render(myele8);
 
 let time = 8;
 
+<<<<<<< HEAD
 const myele9 = (
   <React.Fragment>
     <h1>지금 몇시지? {time}시야!</h1>
@@ -161,3 +189,14 @@ const myele9 = (
 const root9 = ReactDOM.createRoot(
   document.querySelectorAll("#root div")[8]);
 root9.render(myele9);
+=======
+const myele9 =( 
+    <React.Fragment>
+        <h1>지금 몇시지? {time}시야!</h1>
+        <h1>{time > 9 ? "지금 집에 들어와!" : "더 놀다와~!"}</h1>
+    </React.Fragment>
+);
+const root9 = ReactDOM.createRoot(
+    document.querySelectorAll("#root div")[8]);
+root9.render(myele9);
+>>>>>>> 62f7b10c49b8d3ead9a8ec070ed6c547e2634d79
