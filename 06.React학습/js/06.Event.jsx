@@ -46,8 +46,16 @@ function EventShow(){
     // 4. 이벤트 적용할 버튼들이 출력됨
     return(
         <React.Fragment>
+            {/* 소원을 말해봐 이미지 출력 : onmousover 이벤트 적용! */}
             <img src="./images/logoM.png" 
             onMouseOver={()=>{aladin("./images/ala4.jpg")}} />
+            {/* 첫번째 슛 버튼 : onclick 이벤트 적용! */}
+            <button onClick={shoot}>골을 팡~!하고 차봐!</button>
+            {/* 두번째 슛 버튼 : onclick 이벤트 적용!(메서드 전달값 있음) */}
+            <button onClick={()=>{shoot2("./images/ball.jpg")}}>
+                골을 팡~!하고 또차봐!
+            </button>
+
         </React.Fragment>
     );
 
@@ -58,7 +66,18 @@ function AlaLamp(props){
     return <img src={props.isrc} alt="알라딘 램프" />;
 } /////// AlaLamp 컴포넌트 ///////////
 
+// 축구공 이미지 출력 컴포넌트
+function Ball(props){
+    return <img id="bb" src={props.isrc} alt="축구공" title="클릭하시면 공이 날아가요!" onClick={move} />;
+    // 리액트 이벤트 설정시 일반함수도 연결가능함!
+} /////// AlaLamp 컴포넌트 ///////////
 
+// 일반 함수로 구현! 공움직이기! ////////////
+function move(){
+    let bb = document.getElementById("bb");
+    bb.style.transform = "translateX(200%) rotate(720deg)";
+    bb.style.transition = "2s ease-in-out";
+} ///////////// move함수 ///////////////////
 
 
 
