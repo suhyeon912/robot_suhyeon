@@ -16,6 +16,7 @@ ul,ol{
 a{
     color: #222;
     text-decoration: none;
+    cursor: pointer;
 }
 /* 이미지관련 */
 img{
